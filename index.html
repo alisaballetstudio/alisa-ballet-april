@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4月体験レッスン | ありさバレエスタジオ</title>
+<meta property="og:title" content="4月体験レッスン｜ありさバレエスタジオ">
+<meta property="og:description" content="子どもも大人も。はじめての方もブランクのある方も。4月体験レッスン受付中 ¥1,000">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --white:      #ffffff;
+  --off-white:  #fdfbf9;
+  --bg-soft:    #faf6f4;
+  --bg-pink:    #fef2ee;
+  --petal-lt:   #fce8e3;
+  --petal:      #f8d8d0;
+  --rose-lt:    #f0b8b0;
+  --rose:       #e07878;
+  --rose-dk:    #c05858;
+  --deep:       #2c1a1a;
+  --mid:        #7a5050;
+  --muted:      #b89090;
+  --light:      #d4b0b0;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Serif JP', serif;
+  background: var(--white);
+  color: var(--deep);
+  overflow-x: hidden;
+}
+
+/* ─────────────────────
+   HERO
+───────────────────── */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 32px 100px;
+  position: relative;
+  overflow: hidden;
+  background: var(--white);
+}
+
+/* soft pink radial glow — light, airy */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 55% at 50%  0%,  rgba(240,160,150,.18) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 10%  80%, rgba(248,200,190,.20) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 90%  30%, rgba(240,180,170,.14) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* delicate petal scatter */
+.petal-dot {
+  position: absolute;
+  border-radius: 50% 0 50% 0;
+  pointer-events: none;
+  opacity: 0;
+  animation: floatUp linear infinite;
+}
+.petal-dot:nth-child(1) { width:7px;  height:7px;  background:#f8d0c8; top:15%; left:8%;   animation-duration:16s; animation-delay:0s;  }
+.petal-dot:nth-child(2) { width:5px;  height:5px;  background:#f0c0b8; top:30%; left:90%;  animation-duration:20s; animation-delay:4s;  }
+.petal-dot:nth-child(3) { width:6px;  height:6px;  background:#fce8e3; top:60%; left:5%;   animation-duration:18s; animation-delay:8s;  }
+.petal-dot:nth-child(4) { width:4px;  height:4px;  background:#f8d0c8; top:75%; left:85%;  animation-duration:22s; animation-delay:2s;  }
+.petal-dot:nth-child(5) { width:5px;  height:5px;  background:#f0c0b8; top:85%; left:45%;  animation-duration:14s; animation-delay:6s;  }
+
+@keyframes floatUp {
+  0%   { opacity:0;   transform:translateY(0) rotate(0deg);   }
+  10%  { opacity:.55; }
+  90%  { opacity:.35; }
+  100% { opacity:0;   transform:translateY(-70px) rotate(160deg); }
+}
+
+.hero-studio {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(.75rem, 1.8vw, .9rem);
+  letter-spacing: .4em;
+  color: var(--muted);
+  opacity: 0;
+  animation: fadeUp 1s ease .3s forwards;
+  position: relative; z-index: 2;
+}
+
+/* thin rule above title */
+.hero-rule-top {
+  width: 1px; height: 36px;
+  background: linear-gradient(to bottom, transparent, var(--petal));
+  margin: 18px auto;
+  opacity: 0;
+  animation: fadeIn 1s ease .5s forwards;
+  position: relative; z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(2.4rem, 9vw, 6rem);
+  font-weight: 200;
+  line-height: 1.2;
+  color: var(--deep);
+  letter-spacing: .12em;
+  opacity: 0;
+  animation: fadeUp 1s ease .6s forwards;
+  position: relative; z-index: 2;
+}
+.hero-title em {
+  display: block;
+  font-style: normal;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--rose-dk);
+  font-size: .52em;
+  letter-spacing: .3em;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+/* month badge */
+.hero-month {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 10px 28px;
+  background: var(--petal-lt);
+  border: 1px solid var(--petal);
+  border-radius: 40px;
+  font-size: .82rem;
+  letter-spacing: .18em;
+  color: var(--rose-dk);
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 1s ease .85s forwards;
+  position: relative; z-index: 2;
+}
+
+.hero-rule-mid {
+  width: 60px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--petal), transparent);
+  margin: 28px auto;
+  opacity: 0;
+  animation: fadeIn 1s ease 1.1s forwards;
+  position: relative; z-index: 2;
+}
+
+.hero-lead {
+  font-size: clamp(.86rem, 2.2vw, 1rem);
+  line-height: 2.4;
+  color: var(--muted);
+  font-weight: 200;
+  letter-spacing: .1em;
+  opacity: 0;
+  animation: fadeUp 1s ease 1.2s forwards;
+  position: relative; z-index: 2;
+}
+
+/* anchor buttons */
+.hero-anchors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 44px;
+  opacity: 0;
+  animation: fadeUp 1s ease 1.3s forwards;
+  position: relative; z-index: 2;
+}
+
+.anchor-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  text-decoration: none;
+  font-family: 'Noto Serif JP', serif;
+  font-size: .85rem;
+  letter-spacing: .1em;
+  font-weight: 300;
+  border-radius: 40px;
+  transition: all .35s ease;
+}
+.anchor-btn.adult {
+  background: var(--white);
+  border: 1.5px solid var(--rose-lt);
+  color: var(--rose-dk);
+  box-shadow: 0 4px 20px rgba(200,100,100,.1);
+}
+.anchor-btn.adult:hover {
+  background: var(--petal-lt);
+  border-color: var(--rose);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(200,100,100,.18);
+}
+.anchor-btn.kids {
+  background: var(--petal-lt);
+  border: 1.5px solid var(--petal);
+  color: var(--mid);
+  box-shadow: 0 4px 20px rgba(200,100,100,.07);
+}
+.anchor-btn.kids:hover {
+  background: var(--petal);
+  border-color: var(--rose-lt);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(200,100,100,.13);
+}
+
+.hero-price-note {
+  margin-top: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: .82rem;
+  letter-spacing: .22em;
+  color: var(--light);
+  opacity: 0;
+  animation: fadeIn 1s ease 1.55s forwards;
+  position: relative; z-index: 2;
+}
+
+.hero-scroll {
+  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: .68rem; letter-spacing: .2em; color: var(--light);
+  opacity: 0; animation: fadeIn 1s ease 1.9s forwards; z-index: 2;
+}
+.scroll-line {
+  width: 1px; height: 38px;
+  background: linear-gradient(to bottom, var(--petal), transparent);
+  animation: scrollPulse 2.5s ease-in-out 2.1s infinite;
+}
+@keyframes scrollPulse {
+  0%,100% { opacity:.4; transform:scaleY(1); }
+  50%      { opacity:.9; transform:scaleY(1.25); }
+}
+
+/* ─────────────────────
+   SECTION BAND
+───────────────────── */
+.section-band {
+  text-align: center;
+  padding: 56px 28px 64px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-pink);
+  border-top: 1px solid var(--petal-lt);
+  border-bottom: 1px solid var(--petal-lt);
+}
+
+/* soft glow behind band title */
+.section-band::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 70% at 50% 50%, rgba(240,160,150,.12), transparent 65%);
+  pointer-events: none;
+}
+
+.band-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: .74rem; letter-spacing: .38em;
+  color: var(--muted); margin-bottom: 10px; position: relative;
+}
+.band-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 300;
+  color: var(--deep); letter-spacing: .06em; line-height: 1.3;
+  position: relative;
+}
+.band-sub {
+  margin-top: 14px; font-size: .86rem;
+  line-height: 2.1; color: var(--muted);
+  font-weight: 200; letter-spacing: .07em; position: relative;
+}
+
+/* ─────────────────────
+   BODY CONTENT
+───────────────────── */
+.body-wrap {
+  padding: 60px 28px 72px;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.sub-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: .72rem; letter-spacing: .34em;
+  color: var(--muted); margin-bottom: 10px;
+}
+.sub-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 3.5vw, 1.55rem); font-weight: 300;
+  color: var(--deep); letter-spacing: .04em;
+  line-height: 1.6; margin-bottom: 28px;
+}
+
+/* ─────────────────────
+   SCHEDULE CARDS
+───────────────────── */
+.schedule-wrap { display: flex; flex-direction: column; gap: 14px; margin-bottom: 52px; }
+
+.schedule-card {
+  background: var(--white);
+  border: 1px solid var(--petal-lt);
+  border-radius: 16px;
+  padding: 22px 28px;
+  position: relative; overflow: hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 2px 16px rgba(200,100,100,.05);
+}
+.schedule-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(200,100,100,.10);
+}
+.schedule-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, transparent, var(--rose-lt), transparent);
+  opacity: .7;
+}
+.schedule-card::after {
+  content: ''; position: absolute; top: -15px; right: -15px;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle, rgba(240,160,150,.15), transparent 70%);
+  pointer-events: none;
+}
+
+.card-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem; font-weight: 300;
+  color: var(--rose-dk); letter-spacing: .04em; margin-bottom: 2px;
+}
+.card-dow { font-size: .7rem; letter-spacing: .22em; color: var(--light); margin-bottom: 12px; }
+.card-classes { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.class-tag {
+  padding: 5px 16px; border-radius: 20px;
+  font-size: .78rem; letter-spacing: .05em; font-weight: 300;
+}
+.tag-adult {
+  background: rgba(224,120,120,.08);
+  border: 1px solid rgba(224,120,120,.30);
+  color: var(--rose-dk);
+}
+.tag-kids {
+  background: rgba(248,200,190,.25);
+  border: 1px solid var(--petal);
+  color: var(--mid);
+}
+
+/* ─────────────────────
+   CHECKLIST
+───────────────────── */
+.checklist {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 16px; margin-bottom: 52px;
+}
+.checklist li {
+  display: flex; align-items: flex-start; gap: 14px;
+  font-size: .9rem; line-height: 1.9;
+  color: var(--mid); font-weight: 300; letter-spacing: .04em;
+}
+.check-dot {
+  flex-shrink: 0; margin-top: 8px;
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--rose-lt);
+}
+
+/* ─────────────────────
+   FEATURES
+───────────────────── */
+.features-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; margin-bottom: 52px;
+}
+@media (max-width: 440px) { .features-grid { grid-template-columns: 1fr; } }
+
+.feature-card {
+  padding: 26px 18px; background: var(--white);
+  border: 1px solid var(--petal-lt); border-radius: 16px;
+  text-align: center;
+  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 2px 12px rgba(200,100,100,.04);
+}
+.feature-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(200,100,100,.09); }
+.feature-icon { font-size: 1.7rem; margin-bottom: 10px; }
+.feature-label { font-size: .85rem; font-weight: 400; color: var(--deep); }
+.feature-desc  { margin-top: 5px; font-size: .74rem; color: var(--light); line-height: 1.75; font-weight: 200; }
+
+/* ─────────────────────
+   INSTRUCTOR
+───────────────────── */
+.instructor-box {
+  background: var(--bg-pink);
+  border: 1px solid var(--petal-lt);
+  border-radius: 18px; padding: 44px 36px; text-align: center;
+  position: relative; overflow: hidden; margin-bottom: 52px;
+  box-shadow: 0 4px 24px rgba(200,100,100,.06);
+}
+.instructor-box::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(240,160,150,.14), transparent 60%);
+  pointer-events: none;
+}
+.instr-ornament {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 1.8rem; color: var(--rose-lt); margin-bottom: 12px; position: relative;
+  letter-spacing: .2em;
+}
+.instr-rule {
+  width: 36px; height: 1px; margin: 0 auto 18px;
+  background: linear-gradient(to right, transparent, var(--rose-lt), transparent);
+}
+.instr-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 300; color: var(--deep);
+  letter-spacing: .1em; margin-bottom: 18px; position: relative;
+}
+.instr-desc {
+  font-size: .86rem; line-height: 2.2;
+  color: var(--mid); font-weight: 300; letter-spacing: .06em; position: relative;
+}
+
+/* ─────────────────────
+   FLOW
+───────────────────── */
+.flow-list {
+  list-style: none; display: flex; flex-direction: column; margin-bottom: 52px;
+}
+.flow-item {
+  display: flex; gap: 20px; padding-bottom: 28px; position: relative;
+}
+.flow-item:not(:last-child)::after {
+  content: ''; position: absolute; left: 15px; top: 32px; bottom: 0; width: 1px;
+  background: linear-gradient(to bottom, var(--petal), transparent);
+}
+.flow-num {
+  flex-shrink: 0; width: 32px; height: 32px;
+  background: var(--petal-lt); border: 1px solid var(--petal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+  color: var(--rose-dk); position: relative; z-index: 1;
+}
+.flow-text {
+  padding-top: 4px; font-size: .88rem;
+  line-height: 1.9; color: var(--mid); font-weight: 300;
+}
+.flow-note { display: block; margin-top: 4px; font-size: .75rem; color: var(--light); }
+
+/* ─────────────────────
+   PRICE
+───────────────────── */
+.price-box {
+  text-align: center; padding: 48px 24px;
+  background: var(--white); border: 1px solid var(--petal-lt);
+  border-radius: 18px; margin-bottom: 52px;
+  position: relative; overflow: hidden;
+  box-shadow: 0 4px 24px rgba(200,100,100,.06);
+}
+.price-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, transparent, var(--rose-lt), transparent);
+  opacity: .6;
+}
+.price-label {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: .84rem; letter-spacing: .22em; color: var(--light); margin-bottom: 12px;
+}
+.price-original {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-bottom: 8px;
+}
+.price-original-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem,4vw,1.8rem); font-weight: 300;
+  color: var(--light); text-decoration: line-through; letter-spacing: .02em;
+}
+.price-original-label {
+  font-size: .72rem; color: var(--light); letter-spacing: .1em; font-weight: 200;
+}
+.price-arrow { font-size: 1.4rem; color: var(--rose-lt); margin: 6px 0; }
+.price-badge {
+  display: inline-block;
+  font-size: .72rem; letter-spacing: .12em; font-weight: 300;
+  padding: 5px 16px; border-radius: 20px; margin-bottom: 12px;
+  color: white;
+}
+.price-badge-sale { background: var(--rose-dk); }
+.price-badge-free { background: var(--mid); }
+.price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 12vw, 5.5rem); font-weight: 300;
+  line-height: 1; letter-spacing: -.02em;
+}
+.price-amount-sale { color: var(--rose-dk); }
+.price-amount-free { color: var(--mid); }
+.price-unit { margin-top: 8px; font-size: .84rem; color: var(--light); font-weight: 200; letter-spacing: .1em; }
+
+/* ─────────────────────
+   SHARED CTA
+───────────────────── */
+.cta-section {
+  background: var(--bg-pink);
+  border-top: 1px solid var(--petal-lt);
+  text-align: center;
+  padding: 80px 28px 88px;
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%,  rgba(240,160,150,.18), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 100%, rgba(240,180,160,.12), transparent 55%);
+  pointer-events: none;
+}
+.cta-inner { max-width: 540px; margin: 0 auto; position: relative; z-index: 1; }
+
+.cta-eyebrow {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: .74rem; letter-spacing: .38em; color: var(--muted); margin-bottom: 12px;
+}
+.cta-rule {
+  width: 40px; height: 1px; margin: 0 auto 24px;
+  background: linear-gradient(to right, transparent, var(--rose-lt), transparent);
+}
+.cta-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 5.5vw, 3rem); font-weight: 300;
+  color: var(--deep); line-height: 1.5; margin-bottom: 14px;
+}
+.cta-note {
+  font-size: .84rem; line-height: 2.2;
+  color: var(--muted); font-weight: 200; letter-spacing: .06em; margin-bottom: 38px;
+}
+.cta-btn {
+  display: inline-block;
+  padding: 17px 58px;
+  background: var(--rose-dk);
+  color: #fff; text-decoration: none;
+  font-size: .9rem; letter-spacing: .14em; border-radius: 40px;
+  transition: all .35s ease;
+  font-family: 'Noto Serif JP', serif; font-weight: 300;
+  box-shadow: 0 6px 28px rgba(192,88,88,.28);
+}
+.cta-btn:hover {
+  background: var(--rose);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 38px rgba(192,88,88,.38);
+}
+.cta-form-note {
+  margin-top: 12px; font-size: .72rem; color: var(--light);
+  font-family: 'Cormorant Garamond', serif; font-style: italic; letter-spacing: .08em;
+}
+.cta-urgency {
+  margin-top: 24px; display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 18px; border: 1px solid var(--petal);
+  border-radius: 20px; font-size: .76rem; color: var(--muted); letter-spacing: .08em;
+}
+
+/* ─────────────────────
+   DIVIDER
+───────────────────── */
+.divider {
+  display: flex; align-items: center; gap: 16px;
+  max-width: 660px; margin: 0 auto; padding: 0 28px;
+}
+.divider-line { flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--petal-lt), transparent); }
+.divider-dot  { width: 5px; height: 5px; border-radius: 50%; background: var(--rose-lt); opacity: .7; }
+
+/* ─────────────────────
+   FOOTER
+───────────────────── */
+footer {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--petal-lt);
+  text-align: center; padding: 44px 28px;
+  font-size: .75rem; color: var(--light);
+  letter-spacing: .14em; font-weight: 200;
+}
+.footer-name {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: .95rem; color: var(--muted); margin-bottom: 8px; letter-spacing: .14em;
+}
+
+/* ─────────────────────
+   ANIMATIONS
+───────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0; transform: translateY(26px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─────────────────────
+   RESPONSIVE
+───────────────────── */
+@media (max-width: 480px) {
+  .anchor-btn     { padding: 12px 22px; font-size: .8rem; }
+  .section-band   { padding: 48px 20px 56px; }
+  .body-wrap      { padding: 48px 20px 60px; }
+  .instructor-box { padding: 36px 20px; }
+  .cta-section    { padding: 64px 20px 72px; }
+  .schedule-card  { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- petal floats -->
+<div class="petal-dot"></div>
+<div class="petal-dot"></div>
+<div class="petal-dot"></div>
+<div class="petal-dot"></div>
+<div class="petal-dot"></div>
+
+<!-- ══════════════════
+     HERO
+══════════════════ -->
+<header class="hero">
+  <p class="hero-studio">ありさバレエスタジオ</p>
+  <div class="hero-rule-top"></div>
+
+  <h1 class="hero-title">
+    体験レッスン
+    <em>Trial Lesson</em>
+  </h1>
+
+  <div class="hero-month">🩰 2026年4月 受付中</div>
+
+  <div class="hero-rule-mid"></div>
+
+  <p class="hero-lead">
+    子どもも、大人も。<br>
+    はじめての方も、ブランクのある方も。<br>
+    バレエの世界へ、ようこそ。
+  </p>
+
+  <div class="hero-anchors">
+    <a href="#adult" class="anchor-btn adult">🩰 大人の方はこちら</a>
+    <a href="#kids"  class="anchor-btn kids" >🌸 お子様の体験はこちら</a>
+  </div>
+
+  <p class="hero-price-note">大人 ¥1,000 ／ お子様 無料（通常¥2,500）</p>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</header>
+
+
+<!-- ══════════════════
+     ADULT
+══════════════════ -->
+<div id="adult">
+  <div class="section-band">
+    <p class="band-eyebrow">Adult Class</p>
+    <h2 class="band-title">大人の方へ</h2>
+    <p class="band-sub">はじめての方も、ブランクのある方も。<br>身体の使い方から、丁寧に。</p>
+  </div>
+
+  <div class="body-wrap">
+
+    <div class="reveal" style="margin-bottom:52px;">
+      <p class="sub-eyebrow">Schedule</p>
+      <h3 class="sub-title">4月の大人クラス日程</h3>
+      <div class="schedule-wrap">
+        <div class="schedule-card">
+          <div class="card-date">4月23日</div>
+          <div class="card-dow">木曜日</div>
+          <div class="card-classes">
+            <span class="class-tag tag-adult">大人初級（ブランクOK）</span>
+          </div>
+        </div>
+        <div class="schedule-card">
+          <div class="card-date">4月25日</div>
+          <div class="card-dow">土曜日</div>
+          <div class="card-classes">
+            <span class="class-tag tag-adult">大人中級（経験者向け）</span>
+          </div>
+        </div>
+        <div class="schedule-card">
+          <div class="card-date">4月26日</div>
+          <div class="card-dow">日曜日</div>
+          <div class="card-classes">
+            <span class="class-tag tag-adult">大人入門（初心者）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:52px;">
+      <p class="sub-eyebrow">For You</p>
+      <h3 class="sub-title">こんな方へ</h3>
+      <ul class="checklist">
+        <li><span class="check-dot"></span>バレエをはじめてみたいけど、何から始めればいいかわからない</li>
+        <li><span class="check-dot"></span>子どものころにやっていて、また踊りたくなった</li>
+        <li><span class="check-dot"></span>大人になってから始めるのは遅いかも、と思っている</li>
+        <li><span class="check-dot"></span>基礎から丁寧に、自分のペースで学びたい</li>
+        <li><span class="check-dot"></span>美しい姿勢と身体の使い方を身につけたい</li>
+      </ul>
+    </div>
+
+    <div class="reveal" style="margin-bottom:52px;">
+      <p class="sub-eyebrow">Instructor</p>
+      <h3 class="sub-title">講師について</h3>
+      <div class="instructor-box">
+        <div class="instr-ornament">✦</div>
+        <div class="instr-rule"></div>
+        <div class="instr-name">ありさバレエスタジオ 主宰</div>
+        <p class="instr-desc">
+          元プロバレエダンサーとして舞台経験を積んだ後、<br>
+          次世代に伝える指導の道へ。<br><br>
+          感覚だけに頼らない、身体の仕組みから考える<br>
+          「考えるバレエ」を大切にしています。<br>
+          初めての方にも、経験者にも、<br>
+          それぞれの「なるほど」を届けます。
+        </p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:52px;">
+      <p class="sub-eyebrow">Flow</p>
+      <h3 class="sub-title">体験の流れ</h3>
+      <ol class="flow-list">
+        <li class="flow-item">
+          <span class="flow-num">1</span>
+          <span class="flow-text">下記フォームよりご予約ください</span>
+        </li>
+        <li class="flow-item">
+          <span class="flow-num">2</span>
+          <span class="flow-text">
+            当日、スタジオへお越しください
+            <span class="flow-note">動きやすい服装でOK。バレエシューズは不要です</span>
+          </span>
+        </li>
+        <li class="flow-item">
+          <span class="flow-num">3</span>
+          <span class="flow-text">体験レッスン（約60分）</span>
+        </li>
+        <li class="flow-item">
+          <span class="flow-num">4</span>
+          <span class="flow-text">ご希望の方にはご入会のご案内をいたします</span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="reveal">
+      <div class="price-box">
+        <p class="price-label">体験レッスン料金</p>
+        <div class="price-original">
+          <span class="price-original-amount">¥2,500</span>
+          <span class="price-original-label">通常料金</span>
+        </div>
+        <div class="price-arrow">↓</div>
+        <div class="price-badge price-badge-sale">体験特別価格</div>
+        <div class="price-amount price-amount-sale">¥1,000</div>
+        <p class="price-unit">/ 1回（税込）</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- divider -->
+<div class="divider reveal" style="padding: 16px 28px;">
+  <div class="divider-line"></div>
+  <div class="divider-dot"></div>
+  <div class="divider-line"></div>
+</div>
+
+
+<!-- ══════════════════
+     KIDS
+══════════════════ -->
+<div id="kids">
+  <div class="section-band">
+    <p class="band-eyebrow">Children's Class</p>
+    <h2 class="band-title">お子様の体験レッスン</h2>
+    <p class="band-sub">3歳から通える、やさしいバレエの入口。<br>音楽に合わせて、のびのびと。</p>
+  </div>
+
+  <div class="body-wrap">
+
+    <div class="reveal" style="margin-bottom:52px;">
+      <p class="sub-eyebrow">Schedule</p>
+      <h3 class="sub-title">4月のお子様クラス日程</h3>
+      <div class="schedule-wrap">
+        <div class="schedule-card">
+          <div class="card-date">4月26日</div>
+          <div class="card-dow">日曜日</div>
+          <div class="card-classes">
+            <span class="class-tag tag-kids">ベビー科（3歳〜）</span>
+            <span class="class-tag tag-kids">児童科</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:52px;">
+      <p class="sub-eyebrow">For You</p>
+      <h3 class="sub-title">こんなお子様・保護者の方へ</h3>
+      <ul class="checklist">
+        <li><span class="check-dot"></span>バレエに興味があるお子様</li>
+        <li><span class="check-dot"></span>リズム感や美しい姿勢を身につけさせたい</li>
+        <li><span class="check-dot"></span>まずは雰囲気を見てから入会を決めたい</li>
+        <li><span class="check-dot"></span>少人数で先生の目が届く環境が安心</li>
+      </ul>
+    </div>
+
+    <div class="reveal" style="margin-bottom:52px;">
+      <p class="sub-eyebrow">About</p>
+      <h3 class="sub-title">スタジオの特徴</h3>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">👶</div>
+          <div class="feature-label">3歳から通える</div>
+          <div class="feature-desc">はじめての習い事に<br>ぴったりな環境</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <div class="feature-label">少人数制</div>
+          <div class="feature-desc">一人ひとりに<br>目が届く</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎵</div>
+          <div class="feature-label">音楽とリズム</div>
+          <div class="feature-desc">音楽を感じながら<br>自然に身体を動かす</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🩰</div>
+          <div class="feature-label">本格的な指導</div>
+          <div class="feature-desc">プロによる<br>丁寧な基礎指導</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:52px;">
+      <p class="sub-eyebrow">Flow</p>
+      <h3 class="sub-title">体験の流れ</h3>
+      <ol class="flow-list">
+        <li class="flow-item">
+          <span class="flow-num">1</span>
+          <span class="flow-text">下記フォームよりご予約ください</span>
+        </li>
+        <li class="flow-item">
+          <span class="flow-num">2</span>
+          <span class="flow-text">
+            当日、スタジオへお越しください
+            <span class="flow-note">動きやすい服装でOK。バレエシューズは不要です</span>
+          </span>
+        </li>
+        <li class="flow-item">
+          <span class="flow-num">3</span>
+          <span class="flow-text">体験レッスン（約45分）</span>
+        </li>
+        <li class="flow-item">
+          <span class="flow-num">4</span>
+          <span class="flow-text">ご希望の方にはご入会のご案内をいたします</span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="reveal">
+      <div class="price-box">
+        <p class="price-label">体験レッスン料金</p>
+        <div class="price-original">
+          <span class="price-original-amount">¥2,500</span>
+          <span class="price-original-label">通常料金</span>
+        </div>
+        <div class="price-arrow">↓</div>
+        <div class="price-badge price-badge-free">初回無料</div>
+        <div class="price-amount price-amount-free">無料</div>
+        <p class="price-unit">体験レッスン1回限り</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════
+     SHARED CTA
+══════════════════ -->
+<div class="cta-section">
+  <div class="cta-inner reveal">
+    <p class="cta-eyebrow">Reserve</p>
+    <div class="cta-rule"></div>
+    <h2 class="cta-heading">体験レッスンの<br>ご予約はこちら</h2>
+    <p class="cta-note">
+      大人クラス ¥1,000 ／ お子様クラス 無料（通常¥2,500）<br>
+      大人・お子様どちらも同じフォームからご予約いただけます。<br>
+      少人数制のため、定員になり次第締め切ります。
+    </p>
+    <!-- ↓ フォームURLができたら href="#" を差し替えてください -->
+    <a href="#" class="cta-btn">予約フォームへ進む</a>
+    <p class="cta-form-note">※ フォームURL準備中 — 差し替え後にこの行を削除してください</p>
+    <div class="cta-urgency">🌸 定員になり次第締め切ります</div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-name">ありさバレエスタジオ</p>
+  <p>© 2026 Arisa Ballet Studio. All rights reserved.</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
+  reveals.forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>
