@@ -510,6 +510,46 @@ body {
 .price-unit { margin-top: 8px; font-size: .84rem; color: var(--light); font-weight: 200; letter-spacing: .1em; }
 
 /* ─────────────────────
+   SECTION CTA（各セクション末尾）
+───────────────────── */
+.section-cta-block {
+  text-align: center;
+  padding: 36px 24px 44px;
+  background: var(--bg-pink);
+  border: 1px solid var(--petal-lt);
+  border-radius: 18px;
+  margin-bottom: 8px;
+}
+.section-cta-note {
+  font-size: .82rem; color: var(--muted);
+  letter-spacing: .06em; font-weight: 200;
+  margin-bottom: 20px; line-height: 1.8;
+}
+.section-cta-btn {
+  display: inline-block;
+  padding: 14px 48px;
+  background: transparent;
+  color: var(--rose-dk);
+  border: 1.5px solid var(--rose-dk);
+  text-decoration: none;
+  font-size: .88rem; letter-spacing: .12em;
+  border-radius: 40px;
+  transition: all .3s ease;
+  font-family: 'Noto Serif JP', serif; font-weight: 300;
+}
+.section-cta-btn:hover {
+  background: var(--rose-dk);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(192,88,88,.22);
+}
+.section-cta-urgency {
+  margin-top: 16px;
+  font-size: .74rem; color: var(--light);
+  letter-spacing: .08em;
+}
+
+/* ─────────────────────
    SHARED CTA
 ───────────────────── */
 .cta-section {
@@ -753,7 +793,7 @@ footer {
           <span class="flow-num">2</span>
           <span class="flow-text">
             当日、スタジオへお越しください
-            <span class="flow-note">動きやすい服装でOK。バレエシューズは不要です</span>
+            <span class="flow-note">動きやすい服装でご参加いただけます。バレエシューズをお持ちの方はご持参ください。</span>
           </span>
         </li>
         <li class="flow-item">
@@ -781,11 +821,18 @@ footer {
       </div>
     </div>
 
+    <!-- 大人セクション CTA -->
+    <div class="reveal">
+      <div class="section-cta-block">
+        <p class="section-cta-note">少人数制のため、定員になり次第締め切ります。</p>
+        <!-- フォームURLができたら href="#" を差し替えてください -->
+        <a href="#" class="section-cta-btn">大人クラスを予約する</a>
+        <div class="section-cta-urgency">🌸 定員になり次第締め切ります</div>
+      </div>
+    </div>
+
   </div>
 </div>
-
-
-<!-- divider -->
 <div class="divider reveal" style="padding: 16px 28px;">
   <div class="divider-line"></div>
   <div class="divider-dot"></div>
@@ -870,7 +917,7 @@ footer {
           <span class="flow-num">2</span>
           <span class="flow-text">
             当日、スタジオへお越しください
-            <span class="flow-note">動きやすい服装でOK。バレエシューズは不要です</span>
+            <span class="flow-note">動きやすい服装でご参加いただけます。</span>
           </span>
         </li>
         <li class="flow-item">
@@ -898,6 +945,16 @@ footer {
       </div>
     </div>
 
+    <!-- 子どもセクション CTA -->
+    <div class="reveal">
+      <div class="section-cta-block">
+        <p class="section-cta-note">少人数制のため、定員になり次第締め切ります。</p>
+        <!-- フォームURLができたら href="#" を差し替えてください -->
+        <a href="#" class="section-cta-btn">お子様クラスを予約する</a>
+        <div class="section-cta-urgency">🌸 定員になり次第締め切ります</div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -905,19 +962,18 @@ footer {
 <!-- ══════════════════
      SHARED CTA
 ══════════════════ -->
-<div class="cta-section">
+<div id="reserve" class="cta-section">
   <div class="cta-inner reveal">
     <p class="cta-eyebrow">Reserve</p>
     <div class="cta-rule"></div>
-    <h2 class="cta-heading">体験レッスンの<br>ご予約はこちら</h2>
+    <h2 class="cta-heading">日程を選んで<br>予約する</h2>
     <p class="cta-note">
       大人クラス ¥1,000 ／ お子様クラス 無料（通常¥2,500）<br>
       大人・お子様どちらも同じフォームからご予約いただけます。<br>
       少人数制のため、定員になり次第締め切ります。
     </p>
-    <!-- ↓ フォームURLができたら href="#" を差し替えてください -->
-    <a href="#" class="cta-btn">予約フォームへ進む</a>
-    <p class="cta-form-note">※ フォームURL準備中 — 差し替え後にこの行を削除してください</p>
+    <!-- フォームURLができたら href="#" を差し替えてください -->
+    <a href="https://forms.gle/r2BxBMmX3VrAJxRR8" class="cta-btn" target="_blank" rel="noopener">予約フォームへ進む</a>
     <div class="cta-urgency">🌸 定員になり次第締め切ります</div>
   </div>
 </div>
